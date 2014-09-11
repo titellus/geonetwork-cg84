@@ -1,55 +1,79 @@
-# Features
+# Code source de l'application
 
-* Immediate search access to local and distributed geospatial catalogues
-* Up- and downloading of data, graphics, documents, pdf files and any other content type
-* An interactive Web Map Viewer to combine Web Map Services from distributed servers around the world
-* Online editing of metadata with a powerful template system
-* Scheduled harvesting and synchronization of metadata between distributed catalogs
-* Support for OGC-CSW 2.0.2 ISO Profile, OAI-PMH, Z39.50 protocols
-* Fine-grained access control with group and user management
-* Multi-lingual user interface
+Le code source de l'application est accessible ici : https://github.com/titellus/geonetwork-cg84/
 
-# Documentation
+L'application GéoSource est configurée pour le CG84 : 
+* configuration de la webapp
+ * connexion à la base (cf. https://github.com/titellus/geonetwork-cg84/blob/develop/web/src/main/webapp/WEB-INF/config-db/jdbc.properties)
+* configurer la carte : 
+ * consultation en JS (https://github.com/titellus/geonetwork-cg84/blob/develop/web-client/src/main/resources/apps/search/js/map/Settings.js#L33), 
+ * édition dans la console d'administration
+* configurer le CSW pour INSPIRE (https://github.com/titellus/geonetwork-cg84/blob/develop/web/src/main/webapp/xml/csw/capabilities_inspire.xml)
 
-User documentation is in the docs submodule in the current repository and is compiled into html pages during a release for publishing on
-a website.
 
-Developer documentation is also in the docs submodule but is being migrated out of that project into the Readme files in each module
-in the project.  General documentation for the project as a whole is in this Readme and module specific documentation can be found in
-each module (assuming there is module specific documentation required).
+# Installation
 
-# Software Development
+Pré-requis :
+* Java 1.7
+* git et Maven 3 (pour compiler l'application uniquement)
 
-Instructions for setting up a development environment/building Geonetwork/compiling user documentation/making a release see:
-[Software Development Documentation](/software_development/)
 
-# Testing
 
-With regards to testing Geonetwork is a standard Java project and primarily depends on JUnit for testing.  However there is a very important
-issue to consider when writing JUnit tests in Geonetwork and that is the separation between unit tests and integration tests
+* Configurer Tomcat : Définir l'encodage dans le fichier conf/server.xml
+```
+<Connector ... URIEncoding="UTF-8">
+```
+```
+set JAVA_OPTS=%JAVA_OPTS% -Xms512m -Xmx512m -XX:MaxPermSize=512m -Dgeonetwork.dir=E:/LNS/REC/MET/Tomcat7.0/data -Dgeonetwork.schema.dir=E:/LNS/REC/MET/Tomcat7.0/webapps/geosource/WEB-INF/data/config/schema_plugins -Dgeonetwork.codelist.dir=E:/LNS/REC/MET/Tomcat7.0/webapps/geosource/WEB-INF/data/config/codelist
+```
 
-* *Unit Tests* - In Geonetwork unit tests should be very very quick to execute and not start up any subsystems of the application in order to keep
-    the execution time of the unit tests very short.  Integration tests do not require super classes and any assistance methods can be static
-    imports, for example statically importing org.junit.Assert or org.junit.Assume or org.fao.geonet.Assert.
-* *Integration Tests* - Integration Test typically start much or all of Geonetwork as part of the test and will take longer to run than
-    a unit test.  However, even though the tests take longer they should still be implemented in such a way to be as efficient as possible.
-    Starting Geonetwork in a way that isolates each integration test from each other integration test is non-trivial.  Because of this
-    there are `abstract` super classes to assist with this.  Many modules have module specific Abstract classes.  For example at the time
-    that this is being written `domain`, `core`, `harvesters` and `services` modules all have module specific super classes that need to
-    be used.  (`harvesting` has 2 superclasses depending on what is to be tested.)
-    The easiest way to learn how to implement an integration test is to search for other integration tests in the same module as the class
-    you want to test.  The following list provides a few tips:
-    * *IMPORTANT*: All Integrations tests *must* end in IntegrationTest.  The build system assumes all tests ending in IntegrationTest is
-        an integration test and runs them in a build phase after unit tests.  All other tests are assumed to be unit tests.
-    * Prefer unit tests over Integration Tests because they are faster.
-    * Search the current module for IntegrationTest to find tests to model your integration test against
-    * This you might want integration tests for are:
-        * Services: If the service already exists and you quick need to write a test to debug/fix its behaviour.
-                    If you are writing a new service it is better to use Mockito to mock the dependencies of the service so the test is
-                    a unit test.
-        * Harvesters
-        * A behaviour that crosses much of the full system
 
-*org.fao.geonet.utils.GeonetHttpRequestFactory*: When making Http requests you should use org.fao.geonet.utils.GeonetHttpRequestFactory instead
-    of directly using HttpClient.  This is because there are mock instances of org.fao.geonet.utils.GeonetHttpRequestFactory that can
-    be used to mock responses when performing tests.
+# Compiler l'application
+
+ 
+```
+git clone git@github.com:titellus/geonetwork-cg84.git
+cd geonetwork-cg84
+git submodule init
+git submodule update
+cp -R maven_repo/* ~/.m2/repository/.
+export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=1024M"
+mvn clean install -DskipTests
+```
+
+Le WAR est alors disponible dans web/target/geonetwork.war.
+
+
+# Migration
+
+
+* Sauvegarder la base de données
+* Migrer la base de données (https://github.com/titellus/geonetwork-cg84/tree/develop/web/src/main/webapp/WEB-INF/classes/setup/run.sql)
+
+
+Copier le répertoire des données (ie. documents associés aux fiches, imagettes) dans la nouvelle version.
+Copier les répertoires WEB-INF/data/000xyz-00xyz dans le répertoire des données de la nouvelle version.
+
+
+## Migrer les fiches ISO19139 profil France vers ISO19139
+
+* Sauvegarder la base !
+* Se connecter avec un compte Admin
+* Rechercher toutes les fiches à traiter (eg. schema iso19139.fra) http://localhost:8080/geonetwork/srv/eng/q?_schema=iso19139.fra&_isTemplate=y or n&summaryOnly=true
+* Selectionner tout http://localhost:8080/geonetwork/srv/eng/metadata.select?selected=add-all
+* Exécuter http://localhost:8080/geonetwork/srv/eng/metadata.batch.processing?process=to19139
+* Progress report http://localhost:8080/geonetwork/srv/eng/metadata.batch.processing.report
+* Attendre la fin
+* En base de donnée
+
+```
+UPDATE metadata SET schemaid = 'iso19139' WHERE schemaid = 'iso19139.fra';
+```
+
+Vérifier la migration
+```
+select * from metadata where data like '%FRA_Dat%'
+```
+
+
+* Dans l'administration du catalogue, réindexer le contenu.

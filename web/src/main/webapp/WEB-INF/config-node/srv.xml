@@ -14,7 +14,11 @@
     </bean>
 
     <!-- Uncomment the database configuration you need to use -->
-    <import resource="../config-db/h2.xml"/>
+    <import resource="../config-db/postgres.xml"/>
+
+  <!--Caused by: org.postgresql.util.PSQLException: ERROR: type "geometry" is only a shell-->
+  <!--Position: 73-->
+    <!--<import resource="../config-db/postgis-alternate-datasource.xml"/>-->
  	<!--<import resource="../config-db/jndi-postgres-postgis.xml"/> -->
  	<!--<import resource="../config-db/oracle.xml"/>-->
  	<!--<import resource="../config-db/mysql.xml"/> -->
