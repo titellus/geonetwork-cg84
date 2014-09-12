@@ -6,9 +6,9 @@ L'application est configurée pour le CG84 :
 * configuration de la webapp
 * connexion à la base
 * configurer la carte :
- * consultation en JS (https://github.com/titellus/geonetwork-cg84/blob/develop/web-client/src/main/resources/apps/search/js/map/Settings.js#L33), 
+ * consultation en JS (https://github.com/titellus/geonetwork-cg84/blob/stable-develop/web-client/src/main/resources/apps/search/js/map/Settings.js#L33), 
  * édition dans la console d'administration
-* configurer le CSW pour INSPIRE (https://github.com/titellus/geonetwork-cg84/blob/develop/web/src/main/webapp/xml/csw/capabilities_inspire.xml)
+* configurer le CSW pour INSPIRE (https://github.com/titellus/geonetwork-cg84/blob/stable-develop/web/src/main/webapp/xml/csw/capabilities_inspire.xml)
 
 
 # Installation
@@ -67,7 +67,7 @@ Le WAR est alors disponible dans web/target/geonetwork.war.
  * Configurer le CSW http://localhost:8080/geonetwork/srv/fre/admin.console#/settings/csw
 
 
-## Migrer les fiches ISO19139 profil France vers ISO19139
+## Migrer les fiches ISO19139 profil France vers ISO19139 et amélioration de la conformité INSPIRE
 
 * Sauvegarder la base !
 * Se connecter avec un compte Admin
