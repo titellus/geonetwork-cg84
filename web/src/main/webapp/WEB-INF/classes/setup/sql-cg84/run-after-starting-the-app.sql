@@ -1,53 +1,4 @@
 
--- Backup old tables
-CREATE TABLE catalogue.old_categories AS SELECT * FROM catalogue.categories;
-CREATE TABLE catalogue.old_categoriesdes AS SELECT * FROM catalogue.categoriesdes;
-CREATE TABLE catalogue.old_groups AS SELECT * FROM catalogue.groups;
-CREATE TABLE catalogue.old_groupsdes AS SELECT * FROM catalogue.groupsdes;
-CREATE TABLE catalogue.old_isolanguages AS SELECT * FROM catalogue.isolanguages;
-CREATE TABLE catalogue.old_isolanguagesdes AS SELECT * FROM catalogue.isolanguagesdes;
-CREATE TABLE catalogue.old_languages AS SELECT * FROM catalogue.languages;
-CREATE TABLE catalogue.old_metadata AS SELECT * FROM catalogue.metadata;
-CREATE TABLE catalogue.old_metadatacateg AS SELECT * FROM catalogue.metadatacateg;
-CREATE TABLE catalogue.old_metadatarating AS SELECT * FROM catalogue.metadatarating;
-CREATE TABLE catalogue.old_operationallowed AS SELECT * FROM catalogue.operationallowed;
-CREATE TABLE catalogue.old_operations AS SELECT * FROM catalogue.operations;
-CREATE TABLE catalogue.old_operationsdes AS SELECT * FROM catalogue.operationsdes;
-CREATE TABLE catalogue.old_regions AS SELECT * FROM catalogue.regions;
-CREATE TABLE catalogue.old_regionsdes AS SELECT * FROM catalogue.regionsdes;
-CREATE TABLE catalogue.old_relations AS SELECT * FROM catalogue.relations;
-CREATE TABLE catalogue.old_settings AS SELECT * FROM catalogue.settings;
-CREATE TABLE catalogue.old_sources AS SELECT * FROM catalogue.sources;
-CREATE TABLE catalogue.old_usergroups AS SELECT * FROM catalogue.usergroups;
-CREATE TABLE catalogue.old_users AS SELECT * FROM catalogue.users;
-
-
--- Drop old tables
-DROP TABLE catalogue.categoriesdes;
-DROP TABLE catalogue.metadatacateg;
-DROP TABLE catalogue.categories;
-DROP TABLE catalogue.groupsdes;
-DROP TABLE catalogue.operationallowed;
-DROP TABLE catalogue.usergroups;
-DROP TABLE catalogue.operationsdes;
-DROP TABLE catalogue.operations;
-DROP TABLE catalogue.isolanguagesdes;
-DROP TABLE catalogue.metadatarating;
-DROP TABLE catalogue.isolanguages;
-DROP TABLE catalogue.relations;
-DROP TABLE catalogue.regionsdes;
-DROP TABLE catalogue.regions;
-DROP TABLE catalogue.settings;
-DROP TABLE catalogue.sources;
-DROP TABLE catalogue.metadata;
-DROP TABLE catalogue.languages;
-DROP TABLE catalogue.groups;
-DROP TABLE catalogue.users;
-
-
--- Startup the application to create new target structure - manually
--- Stop the application
-
 
 -- Propagate old information to new structure
 DELETE FROM catalogue.groupsdes;
@@ -79,6 +30,7 @@ INSERT INTO catalogue.categoriesdes (
 
 
 DELETE FROM catalogue.useraddress;
+DELETE FROM catalogue.Address;
 DELETE FROM catalogue.email;
 DELETE FROM catalogue.users;
 
@@ -94,6 +46,7 @@ INSERT INTO catalogue.users (
   SELECT id, kind, null, name, organisation, profile::integer, null, null, password,
   'update_hash_required', username, username
   FROM catalogue.old_users);
+
 
 INSERT INTO Address (id, address, city, country, state, zip) VALUES  (1, '', '', '', '', '');
 INSERT INTO UserAddress (userid, addressid) VALUES  (1, 1);
@@ -163,45 +116,3 @@ UPDATE settings SET value = (
 ) WHERE NAME = 'system/site/organization';
 
 
-
--- Démarrer l'application
-
-
-
--- Migrer les fiches du profil France vers l'ISO19139
-
-
-
-
-
--- Vérifier les paramètres
-http://localhost:8080/geonetwork/srv/fre/admin.console#/settings/system
--- Définir le logo du catalogue
-http://localhost:8080/geonetwork/srv/fre/admin.console#/settings/logo
--- Configurer le CSW
-http://localhost:8080/geonetwork/srv/fre/admin.console#/settings/csw
-
-
-
--- Drop backup tables
-
-DROP TABLE catalogue.old_categories;
-DROP TABLE catalogue.old_categoriesdes;
-DROP TABLE catalogue.old_groups;
-DROP TABLE catalogue.old_groupsdes;
-DROP TABLE catalogue.old_isolanguages;
-DROP TABLE catalogue.old_isolanguagesdes;
-DROP TABLE catalogue.old_languages;
-DROP TABLE catalogue.old_metadata;
-DROP TABLE catalogue.old_metadatacateg;
-DROP TABLE catalogue.old_metadatarating;
-DROP TABLE catalogue.old_operationallowed;
-DROP TABLE catalogue.old_operations;
-DROP TABLE catalogue.old_operationsdes;
-DROP TABLE catalogue.old_regions;
-DROP TABLE catalogue.old_regionsdes;
-DROP TABLE catalogue.old_relations;
-DROP TABLE catalogue.old_settings;
-DROP TABLE catalogue.old_sources;
-DROP TABLE catalogue.old_usergroups;
-DROP TABLE catalogue.old_users;

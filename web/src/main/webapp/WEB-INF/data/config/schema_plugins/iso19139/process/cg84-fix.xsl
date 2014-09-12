@@ -137,7 +137,7 @@
   </xsl:template>
   
   <!-- handle FRA_DataIdentification-->
-  <xsl:template match="fra:FRA_DataIdentification" priority="2000">
+  <xsl:template match="fra:FRA_DataIdentification|gmd:MD_DataIdentification" priority="2000">
     <gmd:MD_DataIdentification>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates select="gmd:citation"/>
