@@ -56,7 +56,7 @@ Le WAR est alors disponible dans web/target/geonetwork.war.
 
 
 * Sauvegarder la base de données
-* Migrer la base de données (https://github.com/titellus/geonetwork-cg84/tree/develop/web/src/main/webapp/WEB-INF/classes/setup/sql-cg84)
+* Migrer la base de données (https://github.com/titellus/geonetwork-cg84/tree/stable-develop/web/src/main/webapp/WEB-INF/classes/setup/sql-cg84)
 * Lancer les instructions SQL de run-before-starting-the-app.sql
 * Démarrer l'application
 * Lancer les instructions SQL de run-after-starting-the-app.sql
