@@ -48,23 +48,23 @@ INSERT INTO catalogue.users (
   FROM catalogue.old_users);
 
 
-INSERT INTO Address (id, address, city, country, state, zip) VALUES  (1, '', '', '', '', '');
-INSERT INTO UserAddress (userid, addressid) VALUES  (1, 1);
-INSERT INTO Address (id, address, city, country, state, zip) VALUES  (2, '', '', '', '', '');
-INSERT INTO UserAddress (userid, addressid) VALUES  (2, 2);
-INSERT INTO Address (id, address, city, country, state, zip) VALUES  (3, '', '', '', '', '');
-INSERT INTO UserAddress (userid, addressid) VALUES  (3, 3);
-INSERT INTO Address (id, address, city, country, state, zip) VALUES  (4, '', '', '', '', '');
-INSERT INTO UserAddress (userid, addressid) VALUES  (4, 4);
-INSERT INTO Address (id, address, city, country, state, zip) VALUES  (5, '', '', '', '', '');
-INSERT INTO UserAddress (userid, addressid) VALUES  (5, 5);
-INSERT INTO Address (id, address, city, country, state, zip) VALUES  (6, '', '', '', '', '');
-INSERT INTO UserAddress (userid, addressid) VALUES  (6, 6);
+INSERT INTO catalogue.Address (id, address, city, country, state, zip) VALUES  (1, '', '', '', '', '');
+INSERT INTO catalogue.UserAddress (userid, addressid) VALUES  (1, 1);
+INSERT INTO catalogue.Address (id, address, city, country, state, zip) VALUES  (2, '', '', '', '', '');
+INSERT INTO catalogue.UserAddress (userid, addressid) VALUES  (2, 2);
+INSERT INTO catalogue.Address (id, address, city, country, state, zip) VALUES  (3, '', '', '', '', '');
+INSERT INTO catalogue.UserAddress (userid, addressid) VALUES  (3, 3);
+INSERT INTO catalogue.Address (id, address, city, country, state, zip) VALUES  (4, '', '', '', '', '');
+INSERT INTO catalogue.UserAddress (userid, addressid) VALUES  (4, 4);
+INSERT INTO catalogue.Address (id, address, city, country, state, zip) VALUES  (5, '', '', '', '', '');
+INSERT INTO catalogue.UserAddress (userid, addressid) VALUES  (5, 5);
+INSERT INTO catalogue.Address (id, address, city, country, state, zip) VALUES  (6, '', '', '', '', '');
+INSERT INTO catalogue.UserAddress (userid, addressid) VALUES  (6, 6);
 
-INSERT INTO Users (id, username, password, name, surname, profile, kind, organisation, security, authtype)
+INSERT INTO catalogue.Users (id, username, password, name, surname, profile, kind, organisation, security, authtype)
   VALUES  (10,'admintmp','46e44386069f7cf0d4f2a420b9a2383a612f316e2024b0fe84052b0b96c479a23e8a0be8b90fb8c2','admin','admin',0,'','','','');
-INSERT INTO Address (id, address, city, country, state, zip) VALUES  (10, '', '', '', '', '');
-INSERT INTO UserAddress (userid, addressid) VALUES  (10, 10);
+INSERT INTO catalogue.Address (id, address, city, country, state, zip) VALUES  (10, '', '', '', '', '');
+INSERT INTO catalogue.UserAddress (userid, addressid) VALUES  (10, 10);
 
 
 
@@ -101,17 +101,17 @@ INSERT INTO catalogue.operationallowed (
   SELECT groupid, metadataid, operationid FROM catalogue.old_operationallowed
 );
 
-UPDATE settings SET value = (
+UPDATE catalogue.settings SET value = (
   SELECT value FROM catalogue.old_settings WHERE id = 21
 ) WHERE NAME = 'system/server/host';
-UPDATE settings SET value = (
+UPDATE catalogue.settings SET value = (
   SELECT value FROM catalogue.old_settings WHERE id = 22
 ) WHERE NAME = 'system/server/port';
 
-UPDATE settings SET value = (
+UPDATE catalogue.settings SET value = (
   SELECT value FROM catalogue.old_settings WHERE id = 11
 ) WHERE NAME = 'system/site/name';
-UPDATE settings SET value = (
+UPDATE catalogue.settings SET value = (
   SELECT value FROM catalogue.old_settings WHERE id = 13
 ) WHERE NAME = 'system/site/organization';
 
