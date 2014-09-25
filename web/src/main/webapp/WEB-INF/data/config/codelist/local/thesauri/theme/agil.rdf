@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#agil">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="fr">AGIL</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#administration">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="fr">ADMINISTRATION</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#cadastre">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">CADASTRE</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#reseau_routier">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">RESEAU ROUTIER</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#topographie">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">TOPOGRAPHIE</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#carthage">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">CARTHAGE</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#edfgdf">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">EDF GDF</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#enseignement">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">ENSEIGNEMENT</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#environnement">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">ENVIRONNEMENT</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#occupation_du_sol">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">OCCUPATION DU SOL</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#bdadresse">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">BDADRESSE IGN</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#route120">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">ROUTE 120 IGN</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#route500">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">ROUTE 500 IGN</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#culture">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">CULTURE</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#securite">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">SECURITE</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#sdis">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">SDIS</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#social">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="fr">SOCIAL</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#sport">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="fr">SPORT</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#statistique">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="fr">STATISTIQUE</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#voie_ferree">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">VOIE FERREE</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#bdcarto">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">BDCARTO IGN</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#bdtopo">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">BDTOPO IGN</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#limite_adm">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">LIMITES ADMINISTRATIVES</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://registry.cg84.fr/agil#raster">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="fr">RASTER</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="fr"></ns2:scopeNote>
+</rdf:Description>
+
+</rdf:RDF>
