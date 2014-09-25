@@ -109,6 +109,10 @@ UPDATE catalogue.settings SET value = (
 ) WHERE NAME = 'system/server/port';
 
 UPDATE catalogue.settings SET value = (
+  SELECT value FROM catalogue.old_settings WHERE id = 12
+) WHERE NAME = 'system/server/siteId';
+
+UPDATE catalogue.settings SET value = (
   SELECT value FROM catalogue.old_settings WHERE id = 11
 ) WHERE NAME = 'system/site/name';
 UPDATE catalogue.settings SET value = (
