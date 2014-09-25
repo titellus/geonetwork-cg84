@@ -9,7 +9,7 @@
   exclude-result-prefixes="fra gmi" xmlns:srv="http://www.isotc211.org/2005/srv">
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
   
-  <xsl:param name="prefix" select="'http://catalogue5.cg84.fr/catalogue/srv/fre/resources.get'"/>
+  <xsl:param name="prefix" select="'http://catalogue5.cg84.fr/geonetwork/srv/fre/resources.get'"/>
   
   <!-- root element  -->
   <xsl:template match="gmd:MD_Metadata">
