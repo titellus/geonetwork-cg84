@@ -59,6 +59,7 @@
         <entry key="javax.persistence.lock.timeout" value="30000"/>
         <entry key="org.hibernate.flushMode" value="AUTO"/>
         <entry key="access" value="PROPERTY"/>
+        <entry key="hibernate.default_schema" value="catalogue"/>
         <entry key="hibernate.id.new_generator_mappings" value="true"/>
         <entry key="hibernate.cache.use_second_level_cache" value="true"/>
         <!--<entry key="hibernate.cache.region.factory_class" value="org.hibernate.cache.internal.NoCachingRegionFactory"/>-->
