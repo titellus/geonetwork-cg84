@@ -176,7 +176,8 @@ WHERE data LIKE '%http://catalogue5.cg84.fr/catalogue%';
 ## Après la migration
 
 * Lancer les instructions SQL de run-when-app-is-ok.sql si l'application a correctement été migrée pour supprimer les tables temporaires de la version 2.4..
-
+* Supprimer l'ancienne base de données catalogue_old
+* Supprimer l'ancienne application /usr/local/Catalogue/web
 
 # Divers
 
