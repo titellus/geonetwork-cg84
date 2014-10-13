@@ -119,6 +119,7 @@ rm intermap
  * Copier le fichier geonetwork.war dans le répertoire webapps de Tomcat
 ```
 cp /disk/dist/catalogue/geonetwork.war .
+chown tomcat:tomcat geonetwork.war
 ```
 * Démarrer l'application en lancant Tomcat
 ```
