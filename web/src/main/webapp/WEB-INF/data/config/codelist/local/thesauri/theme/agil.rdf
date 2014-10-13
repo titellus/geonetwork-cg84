@@ -3,7 +3,16 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-
+<skos:ConceptScheme rdf:about="http://geonetwork-opensource.org/inspire-theme">
+<dc:title>Thème AGIL</dc:title>
+<dc:creator>
+<foaf:Organization>
+<foaf:name>CG84</foaf:name>
+</foaf:Organization>
+</dc:creator>
+<dcterms:issued>2014-10-01</dcterms:issued>
+<dcterms:modified>2014-10-01</dcterms:modified>
+</skos:ConceptScheme>
 <rdf:Description rdf:about="http://registry.cg84.fr/agil#agil">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="fr">AGIL</ns2:prefLabel>
